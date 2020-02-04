@@ -8,21 +8,23 @@ module.exports = function(values) {
 			{
 				type: "input",
 				name: "username",
-				message: "Github username:",
+				message: "GitHub User or Org:",
 				default() {
-					return exec("git config --get user.name").toString().trim();
+					return exec("git config --get user.username").toString().trim();
 				}
 			},		
 			{
 				type: "input",
 				name: "fullName",
-				message: "Your name:",
-				default: "MoleculerJS"
+				message: "Your Name:",
+				default() {
+					return exec("get config --get user.name").toString().trim();
+				}
 			},		
 			{
 				type: "input",
 				name: "projectDescription",
-				message: "Project description:"
+				message: "Service Description:"
 			},
 			{
 				type: "input",
