@@ -1,7 +1,7 @@
 {
   "name": "moleculer-template-module",
   "version": "1.0.1",
-  "description": "Simple module template for moleculer-cli",
+  "description": "Simple service module template for moleculer-cli",
   "main": "meta.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,10 +11,10 @@
     "url": "git+https://github.com/moleculerjs/moleculer-template-module.git"
   },
   "keywords": [],
-  "author": "MoleculerJS",
+  "author": "ccashwell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/moleculerjs/moleculer-template-module/issues"
+    "url": "https://github.com/soopersecret/moleculer-template-module/issues"
   },
-  "homepage": "https://github.com/moleculerjs/moleculer-template-module#readme"
+  "homepage": "https://github.com/soopersecret/moleculer-template-module#readme"
 }

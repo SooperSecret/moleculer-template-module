@@ -4,25 +4,25 @@ const { ServiceBroker } = require("moleculer");
 const MyService = require("../../src");
 
 describe("Test MyService", () => {
-	const broker = new ServiceBroker();
-	const service = broker.createService(MyService);
+  const broker = new ServiceBroker();
+  const service = broker.createService(MyService);
 
-	beforeAll(() => broker.start());
-	afterAll(() => broker.stop());
+  beforeAll(() => broker.start());
+  afterAll(() => broker.stop());
 
-	it("should be created", () => {
-		expect(service).toBeDefined();
-	});
+  it("should be created", () => {
+    expect(service).toBeDefined();
+  });
 
-	it("should return with 'Hello Anonymous'", () => {
-		return broker.call("{{serviceName}}.test").then(res => {
-			expect(res).toBe("Hello Anonymous");
-		});
-	});
+  it("should return with 'Hello Anonymous'", () => {
+    return broker.call("{{serviceName}}.test").then(res => {
+      expect(res).toBe("Hello Anonymous");
+    });
+  });
 
-	it("should return with 'Hello John'", () => {
-		return broker.call("{{serviceName}}.test", { name: "John" }).then(res => {
-			expect(res).toBe("Hello John");
-		});
-	});
+  it("should return with 'Hello John'", () => {
+    return broker.call("{{serviceName}}.test", { name: "John" }).then(res => {
+      expect(res).toBe("Hello John");
+    });
+  });
 });

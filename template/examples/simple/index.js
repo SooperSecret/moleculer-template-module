@@ -1,23 +1,21 @@
 "use strict";
 
-let { ServiceBroker } 	= require("moleculer");
-let MyService 			= require("../../index");
+let { ServiceBroker } = require("moleculer");
+let AwesomeService = require("../../index");
 
-// Create broker
+// Create a broker
 let broker = new ServiceBroker({
-	logger: console
+  logger: console
 });
 
-// Load my service
-broker.createService(MyService);
+// Load our service
+broker.createService(AwesomeService);
 
 // Start server
 broker.start().then(() => {
-
-	// Call action
-	broker
-		.call("{{serviceName}}.test", { name: "John Doe" })
-		.then(broker.logger.info)
-		.catch(broker.logger.error);
-
+  // Call an action
+  broker
+    .call("{{serviceName}}.test", { name: "Guy" })
+    .then(broker.logger.info)
+    .catch(broker.logger.error);
 });

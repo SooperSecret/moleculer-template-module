@@ -6,50 +6,43 @@
 "use strict";
 
 module.exports = {
+  name: "{{serviceName}}",
 
-	name: "{{serviceName}}",
+  /**
+   * Settings
+   */
+  settings: {
 
-	/**
-	 * Default settings
-	 */
-	settings: {
+  },
 
-	},
+  /**
+   * Actions
+   */
+  actions: {
+    test(ctx) {
+      return `Hello from {{projectName}}, ${ctx.params.name || "Anonymous"}!`;
+    }
+  },
 
-	/**
-	 * Actions
-	 */
-	actions: {
-		test(ctx) {
-			return "Hello " + (ctx.params.name || "Anonymous");
-		}
-	},
+  /**
+   * Methods
+   */
+  methods: {
 
-	/**
-	 * Methods
-	 */
-	methods: {
+  },
 
-	},
+  /**
+   * Service lifecycle event handlers
+   */
+  created() {
+    this.broker.logger.info("{{projectName}} Service Instance Created");
+  },
 
-	/**
-	 * Service created lifecycle event handler
-	 */
-	created() {
+  started() {
+    this.broker.logger.info("{{projectName}} Service Instance Started");
+  },
 
-	},
-
-	/**
-	 * Service started lifecycle event handler
-	 */
-	started() {
-
-	},
-
-	/**
-	 * Service stopped lifecycle event handler
-	 */
-	stopped() {
-
-	}
+  stopped() {
+    this.broker.logger.info("{{projectName}} Service Instance Stopped");
+  }
 };

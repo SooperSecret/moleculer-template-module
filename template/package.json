@@ -12,7 +12,6 @@
     "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "keywords": [
-    "moleculer",
     "microservice"
   ],
   "repository": {
@@ -20,7 +19,7 @@
     "url": "https://github.com/{{username}}/{{projectName}}.git"
   },
   "author": "{{fullName}}",
-  "license": "MIT",
+  "license": "Private",
   "peerDependencies": {
     "moleculer": "^0.13.0"
   },
